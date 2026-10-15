@@ -11,6 +11,11 @@ export type Model = {
   dateAdded: string
 }
 
+export type ModelsGridProps = {
+    title: string
+    models: Model[]
+}
+
 
 export type Category = {
     displayName: string
@@ -31,6 +36,15 @@ export type ModelDetailPageProps = {
         id: string
     }>
 }
+
+export type GetModelsParams = {
+    category?: string
+}
+// export type CategoryPageProps = {
+//     params: Promise<{
+//         categoryName: string
+//     }>
+// }
 
 export type CategoryDetailPageProps = {
     params: Promise<{

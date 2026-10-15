@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation"
 
 export default function Navbar() {
     const pathname = usePathname()
-    console.log("path name ", pathname)
   return (
     <header className="w-full bg-white">
       <nav className="flex justify-between px-6 py-4">
@@ -28,8 +27,8 @@ export default function Navbar() {
           </div>
         </Link>
         <ul className="flex items-center">
-            <NavLink isActive={pathname === "/3d-models"} href="/3d-models">3D Models</NavLink>
-            <NavLink isActive={pathname === "/about"} href="/about">About</NavLink>
+            <NavLink isActive={pathname.includes("/3d-models")} href="/3d-models">3D Models</NavLink>
+            <NavLink isActive={pathname.includes("/about")} href="/about">About</NavLink>
         </ul>
       </nav>
     </header>

@@ -1,5 +1,19 @@
 import modelsData from "../data/models.json"
-import type { Model } from "@/app/types"
+import type { Model, GetModelsParams } from "@/app/types"
+
+
+export async function getModels({ category }: GetModelsParams = {}): Promise<Model[]> {
+  // This is where you'd write code to fetch the list
+  // of models from a database. We're mocking that with
+  // our JSON array of data in models.json for now.
+  let filteredModels = [...modelsData]
+  if (category) {
+    filteredModels = modelsData.filter(
+      (model: Model) => model.category === category
+    )
+  }
+  return filteredModels
+}
 
 export async function getAllModels() {
   // This is where you'd write code to fetch the list
